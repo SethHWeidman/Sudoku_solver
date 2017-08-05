@@ -1,7 +1,22 @@
 .grid {
-  width: 450px;
-  height: 450px;
+  width: 550px;
+  height: 550px;
   background-color: powderblue;
-  /*display: block;*/
+  display: block;
+  margin: auto; /*Centers horizontally*/
+}
+
+.grid-row {
+  display: inline-block;
+  vertical-align: top;
   margin: auto;
+  background-color: powderblue;
+}
+
+.cell {
+  width: 50px;
+  height: 50px;
+  border: 1px solid white;
+  display: block;
+  float: left;
 }
