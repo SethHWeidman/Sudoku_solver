@@ -1,23 +1,30 @@
 .grid {
-  width: 550px;
-  /*height: 550px;*/
-  background-color: powderblue;
+  width: 468px; /*52 x 9 */
+  height: 468px;
+
+  /*Center horizontally*/
   display: block;
-  margin: auto; /*Centers horizontally*/
+  margin: auto;
 }
 
 .grid-row {
+
+  /*Maintain row width while wrapping next row around*/
   display: inline-block;
-  vertical-align: top;
-  margin: auto;
+
   background-color: powderblue;
 }
 
 .cell {
+  /*Size cells*/
   width: 50px;
   height: 50px;
   border: 1px solid white;
+
+  /*Gets cells to move to left of row.*/
   float: left;
+
+  /*Align text within cells.*/
   text-align: center;
   vertical-align: middle;
   line-height: 50px;
