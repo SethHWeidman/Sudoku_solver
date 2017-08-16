@@ -8,6 +8,14 @@ def get_boxes(A, B):
 
 boxes = get_boxes(ROWS, COLS)
 
+ROW_UNITS = [get_boxes(r, COLS) for r in ROWS]
+COLUMN_UNITS = [get_boxes(ROWS, c) for c in COLS]
+SQUARE_UNITS = [get_boxes(rs, cs) for rs in ('ABC','DEF','GHI') for cs in ('123','456','789')]
+unitlist = ROW_UNITS + COLUMN_UNITS + SQUARE_UNITS
+
+units = dict((s, [u for u in unitlist if s in u]) for s in boxes)
+peers = dict((s, set(sum(units[s],[]))-set([s])) for s in boxes)
+
 def grid_values(grid_string, blanks='.'):
     """
     Convert grid into a dict of {square: char} with '123456789' for empties.
