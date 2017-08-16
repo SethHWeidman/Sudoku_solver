@@ -226,3 +226,17 @@ def solve(grid):
     grid_vals_puzzle = grid_values(grid, blanks='123456789')
     final_values = search(grid_vals_puzzle)
     return final_values
+
+
+def solve_values(values):
+    """
+    Find the solution to a Sudoku grid.
+    Args:
+        grid(string): a string representing a sudoku grid.
+            Example: '2.............62....1....7...6..8...3...9...7...6..4...4....8....52.............3'
+    Returns:
+        The dictionary representation of the final sudoku grid. False if no solution exists.
+    """
+    print("Solving the puzzle: ")
+    final_values = search(values)
+    return final_values
