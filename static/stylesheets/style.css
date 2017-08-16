@@ -1,26 +1,39 @@
-input {
+.sudoku_number {
     height: inherit;
     width: inherit;
-    background-color: powderblue;
+    background-color: inherit;
     text-align: center;
+    font-size: 200%;
 }
 
 
 .grid {
-  width: 468px; /*52 x 9 */
-  height: 468px;
+  width: 470px; /*157 * 3 - 1 */
+  height: 466px; /* Not sure why this is less */
 
   /*Center horizontally*/
   display: block;
   margin: auto;
+  border: 2px solid blue;
 }
 
-.grid-row {
+.grid-block {
 
   /*Maintain row width while wrapping next row around*/
   display: inline-block;
+  float: left;
+  width: 155px;
+  border: 1px solid white;
+}
 
+/*Alternate colors blue and gray*/
+
+.grid-block:nth-child(odd) {
   background-color: powderblue;
+}
+
+.grid-block:nth-child(even) {
+  background-color: Gainsboro;
 }
 
 .cell {
@@ -36,4 +49,9 @@ input {
   text-align: center;
   vertical-align: middle;
   line-height: 50px;
+}
+
+#submit_button {
+    /*Put ten pixels below Sudoku*/
+    margin-top: 10px;
 }

@@ -4,277 +4,451 @@
 	<link rel=stylesheet type=text/css href="{{ url_for('static', filename='stylesheets/style.css') }}">
 </head>
 {% if sudoku %}
-<body>
-   <div class="grid">
-      <div class="grid-row">
-         <div id="A1" class="cell">
-            {{ sudoku.A1 }}
-         </div>
-         <div id="A2" class="cell">
-            {{ sudoku.A2 }}
-         </div>
-         <div id="A3" class="cell">
-            {{ sudoku.A3 }}
-         </div>
-         <div id="A4" class="cell">
-            {{ sudoku.A4 }}
-         </div>
-         <div id="A5" class="cell">
-            {{ sudoku.A5 }}
-         </div>
-         <div id="A6" class="cell">
-            {{ sudoku.A6 }}
-         </div>
-         <div id="A7" class="cell">
-            {{ sudoku.A7 }}
-         </div>
-         <div id="A8" class="cell">
-            {{ sudoku.A8 }}
-         </div>
-         <div id="A9" class="cell">
-            {{ sudoku.A9 }}
+<div class="grid">
+   <div class="grid-block">
+      <div id="A1" class="cell">
+         <div class='sudoku_number'>
+           {{ sudoku.A1 }}
          </div>
       </div>
+      <div id="A2" class="cell">
+        <div class='sudoku_number'>
+          {{ sudoku.A2 }}
+        </div>
+      </div>
+      <div id="A3" class="cell">
+        <div class='sudoku_number'>
+          {{ sudoku.A3 }}
+        </div>
+      </div>
       <br>
-      <div class="grid-row">
-        <div id="B1" class="cell">
-           {{ sudoku.B1 }}
+      <div id="B1" class="cell">
+        <div class='sudoku_number'>
+          {{ sudoku.B1 }}
         </div>
-        <div id="B2" class="cell">
-           {{ sudoku.B2 }}
+      </div>
+      <div id="B2" class="cell">
+        <div class='sudoku_number'>
+          {{ sudoku.B2 }}
         </div>
-        <div id="B3" class="cell">
-           {{ sudoku.B3 }}
+      </div>
+      <div id="B3" class="cell">
+        <div class='sudoku_number'>
+          {{ sudoku.B3 }}
         </div>
-        <div id="B4" class="cell">
+      </div>
+      <br>
+      <div id="C1" class="cell">
+        <div class='sudoku_number'>
+          {{ sudoku.C1 }}
+        </div>
+      </div>
+      <div id="C2" class="cell">
+        <div class='sudoku_number'>
+          {{ sudoku.C2 }}
+        </div>
+      </div>
+      <div id="C3" class="cell">
+        <div class='sudoku_number'>
+          {{ sudoku.C3 }}
+        </div>
+      </div>
+    </div>
+    <div class="grid-block">
+       <div id="A4" class="cell">
+          <div class='sudoku_number'>
+            {{ sudoku.A4 }}
+          </div>
+       </div>
+       <div id="A5" class="cell">
+         <div class='sudoku_number'>
+           {{ sudoku.A5 }}
+         </div>
+       </div>
+       <div id="A6" class="cell">
+         <div class='sudoku_number'>
+           {{ sudoku.A6 }}
+         </div>
+       </div>
+       <br>
+       <div id="B4" class="cell">
+         <div class='sudoku_number'>
            {{ sudoku.B4 }}
-        </div>
-        <div id="B5" class="cell">
+         </div>
+       </div>
+       <div id="B5" class="cell">
+         <div class='sudoku_number'>
            {{ sudoku.B5 }}
-        </div>
-        <div id="B6" class="cell">
+         </div>
+       </div>
+       <div id="B6" class="cell">
+         <div class='sudoku_number'>
            {{ sudoku.B6 }}
+         </div>
+       </div>
+       <br>
+       <div id="C4" class="cell">
+         <div class='sudoku_number'>
+           {{ sudoku.C4 }}
+         </div>
+       </div>
+       <div id="C5" class="cell">
+         <div class='sudoku_number'>
+           {{ sudoku.C5 }}
+         </div>
+       </div>
+       <div id="C6" class="cell">
+         <div class='sudoku_number'>
+           {{ sudoku.C6 }}
+         </div>
+       </div>
+     </div>
+     <div class="grid-block">
+        <div id="A7" class="cell">
+           <div class='sudoku_number'>
+             {{ sudoku.A7 }}
+           </div>
         </div>
+        <div id="A8" class="cell">
+          <div class='sudoku_number'>
+            {{ sudoku.A8 }}
+          </div>
+        </div>
+        <div id="A9" class="cell">
+          <div class='sudoku_number'>
+            {{ sudoku.A9 }}
+          </div>
+        </div>
+        <br>
         <div id="B7" class="cell">
-           {{ sudoku.B7 }}
+          <div class='sudoku_number'>
+            {{ sudoku.B7 }}
+          </div>
         </div>
         <div id="B8" class="cell">
-           {{ sudoku.B8 }}
+          <div class='sudoku_number'>
+            {{ sudoku.B8 }}
+          </div>
         </div>
         <div id="B9" class="cell">
-           {{ sudoku.B9 }}
+          <div class='sudoku_number'>
+            {{ sudoku.B9 }}
+          </div>
         </div>
-      </div>
-      <br>
-      <div class="grid-row">
-        <div id="C1" class="cell">
-           {{ sudoku.C1 }}
-        </div>
-        <div id="C2" class="cell">
-           {{ sudoku.C2 }}
-        </div>
-        <div id="C3" class="cell">
-           {{ sudoku.C3 }}
-        </div>
-        <div id="C4" class="cell">
-           {{ sudoku.C4 }}
-        </div>
-        <div id="C5" class="cell">
-           {{ sudoku.C5 }}
-        </div>
-        <div id="C6" class="cell">
-           {{ sudoku.C6 }}
-        </div>
+        <br>
         <div id="C7" class="cell">
-           {{ sudoku.C7 }}
+          <div class='sudoku_number'>
+            {{ sudoku.C7 }}
+          </div>
         </div>
         <div id="C8" class="cell">
-           {{ sudoku.C8 }}
+          <div class='sudoku_number'>
+            {{ sudoku.C8 }}
+          </div>
         </div>
         <div id="C9" class="cell">
-           {{ sudoku.C9 }}
+          <div class='sudoku_number'>
+            {{ sudoku.C9 }}
+          </div>
         </div>
       </div>
-      <br>
-      <div class="grid-row">
-        <div id="D1" class="cell">
-           {{ sudoku.D1 }}
-        </div>
-        <div id="D2" class="cell">
-           {{ sudoku.D2 }}
-        </div>
-        <div id="D3" class="cell">
-           {{ sudoku.D3 }}
-        </div>
-        <div id="D4" class="cell">
-           {{ sudoku.D4 }}
-        </div>
-        <div id="D5" class="cell">
-           {{ sudoku.D5 }}
-        </div>
-        <div id="D6" class="cell">
-           {{ sudoku.D6 }}
-        </div>
-        <div id="D7" class="cell">
-           {{ sudoku.D7 }}
-        </div>
-        <div id="D8" class="cell">
-           {{ sudoku.D8 }}
-        </div>
-        <div id="D9" class="cell">
-           {{ sudoku.D9 }}
-        </div>
-      </div>
-      <br>
-      <div class="grid-row">
-        <div id="E1" class="cell">
-           {{ sudoku.E1 }}
-        </div>
-        <div id="E2" class="cell">
-           {{ sudoku.E2 }}
-        </div>
-        <div id="E3" class="cell">
-           {{ sudoku.E3 }}
-        </div>
-        <div id="E4" class="cell">
-           {{ sudoku.E4 }}
-        </div>
-        <div id="E5" class="cell">
-           {{ sudoku.E5 }}
-        </div>
-        <div id="E6" class="cell">
-           {{ sudoku.E6 }}
-        </div>
-        <div id="E7" class="cell">
-           {{ sudoku.E7 }}
-        </div>
-        <div id="E8" class="cell">
-           {{ sudoku.E8 }}
-        </div>
-        <div id="E9" class="cell">
-           {{ sudoku.E9 }}
-        </div>
-      </div>
-      <br>
-      <div class="grid-row">
-        <div id="F1" class="cell">
-           {{ sudoku.F1 }}
-        </div>
-        <div id="F2" class="cell">
-           {{ sudoku.F2 }}
-        </div>
-        <div id="F3" class="cell">
-           {{ sudoku.F3 }}
-        </div>
-        <div id="F4" class="cell">
-           {{ sudoku.F4 }}
-        </div>
-        <div id="F5" class="cell">
-           {{ sudoku.F5 }}
-        </div>
-        <div id="F6" class="cell">
-           {{ sudoku.F6 }}
-        </div>
-        <div id="F7" class="cell">
-           {{ sudoku.F7 }}
-        </div>
-        <div id="F8" class="cell">
-           {{ sudoku.F8 }}
-        </div>
-        <div id="F9" class="cell">
-           {{ sudoku.F9 }}
-        </div>
-      </div>
-      <br>
-      <div class="grid-row">
-        <div id="G1" class="cell">
-           {{ sudoku.G1 }}
-        </div>
-        <div id="G2" class="cell">
-           {{ sudoku.G2 }}
-        </div>
-        <div id="G3" class="cell">
-           {{ sudoku.G3 }}
-        </div>
-        <div id="G4" class="cell">
-           {{ sudoku.G4 }}
-        </div>
-        <div id="G5" class="cell">
-           {{ sudoku.G5 }}
-        </div>
-        <div id="G6" class="cell">
-           {{ sudoku.G6 }}
-        </div>
-        <div id="G7" class="cell">
-           {{ sudoku.G7 }}
-        </div>
-        <div id="G8" class="cell">
-           {{ sudoku.G8 }}
-        </div>
-        <div id="G9" class="cell">
-           {{ sudoku.G9 }}
-        </div>
-      </div>
-      <br>
-       <div class="grid-row">
-         <div id="H1" class="cell">
-            {{ sudoku.H1 }}
+
+
+      <div class="grid-block">
+         <div id="D1" class="cell">
+            <div class='sudoku_number'>
+              {{ sudoku.D1 }}
+            </div>
          </div>
-         <div id="H2" class="cell">
-            {{ sudoku.H2 }}
+         <div id="D2" class="cell">
+           <div class='sudoku_number'>
+             {{ sudoku.D2 }}
+           </div>
          </div>
-         <div id="H3" class="cell">
-            {{ sudoku.H3 }}
+         <div id="D3" class="cell">
+           <div class='sudoku_number'>
+             {{ sudoku.D3 }}
+           </div>
          </div>
-         <div id="H4" class="cell">
-            {{ sudoku.H4 }}
+         <br>
+         <div id="E1" class="cell">
+           <div class='sudoku_number'>
+             {{ sudoku.E1 }}
+           </div>
          </div>
-         <div id="H5" class="cell">
-            {{ sudoku.H5 }}
+         <div id="E2" class="cell">
+           <div class='sudoku_number'>
+             {{ sudoku.E2 }}
+           </div>
          </div>
-         <div id="H6" class="cell">
-            {{ sudoku.H6 }}
+         <div id="E3" class="cell">
+           <div class='sudoku_number'>
+             {{ sudoku.E3 }}
+           </div>
          </div>
-         <div id="H7" class="cell">
-            {{ sudoku.H7 }}
+         <br>
+         <div id="F1" class="cell">
+           <div class='sudoku_number'>
+             {{ sudoku.F1 }}
+           </div>
          </div>
-         <div id="H8" class="cell">
-            {{ sudoku.H8 }}
+         <div id="F2" class="cell">
+           <div class='sudoku_number'>
+             {{ sudoku.F2 }}
+           </div>
          </div>
-         <div id="H9" class="cell">
-            {{ sudoku.H9 }}
+         <div id="F3" class="cell">
+           <div class='sudoku_number'>
+             {{ sudoku.F3 }}
+           </div>
          </div>
-      </div>
-      <br>
-       <div class="grid-row">
-         <div id="I1" class="cell">
-            {{ sudoku.I1 }}
+       </div>
+       <div class="grid-block">
+          <div id="D4" class="cell">
+             <div class='sudoku_number'>
+               {{ sudoku.D4 }}
+             </div>
+          </div>
+          <div id="D5" class="cell">
+            <div class='sudoku_number'>
+              {{ sudoku.D5 }}
+            </div>
+          </div>
+          <div id="D6" class="cell">
+            <div class='sudoku_number'>
+              {{ sudoku.D6 }}
+            </div>
+          </div>
+          <br>
+          <div id="E4" class="cell">
+            <div class='sudoku_number'>
+              {{ sudoku.E4 }}
+            </div>
+          </div>
+          <div id="E5" class="cell">
+            <div class='sudoku_number'>
+              {{ sudoku.E5 }}
+            </div>
+          </div>
+          <div id="E6" class="cell">
+            <div class='sudoku_number'>
+              {{ sudoku.E6 }}
+            </div>
+          </div>
+          <br>
+          <div id="F4" class="cell">
+            <div class='sudoku_number'>
+              {{ sudoku.F4 }}
+            </div>
+          </div>
+          <div id="F5" class="cell">
+            <div class='sudoku_number'>
+              {{ sudoku.F5 }}
+            </div>
+          </div>
+          <div id="F6" class="cell">
+            <div class='sudoku_number'>
+              {{ sudoku.F6 }}
+            </div>
+          </div>
+        </div>
+        <div class="grid-block">
+           <div id="D7" class="cell">
+              <div class='sudoku_number'>
+                {{ sudoku.D7 }}
+              </div>
+           </div>
+           <div id="D8" class="cell">
+             <div class='sudoku_number'>
+               {{ sudoku.D8 }}
+             </div>
+           </div>
+           <div id="D9" class="cell">
+             <div class='sudoku_number'>
+               {{ sudoku.D9 }}
+             </div>
+           </div>
+           <br>
+           <div id="E7" class="cell">
+             <div class='sudoku_number'>
+               {{ sudoku.E7 }}
+             </div>
+           </div>
+           <div id="E8" class="cell">
+             <div class='sudoku_number'>
+               {{ sudoku.E8 }}
+             </div>
+           </div>
+           <div id="E9" class="cell">
+             <div class='sudoku_number'>
+               {{ sudoku.E9 }}
+             </div>
+           </div>
+           <br>
+           <div id="F7" class="cell">
+             <div class='sudoku_number'>
+               {{ sudoku.F7 }}
+             </div>
+           </div>
+           <div id="F8" class="cell">
+             <div class='sudoku_number'>
+               {{ sudoku.F8 }}
+             </div>
+           </div>
+           <div id="F9" class="cell">
+             <div class='sudoku_number'>
+               {{ sudoku.F9 }}
+             </div>
+           </div>
          </div>
-         <div id="I2" class="cell">
-            {{ sudoku.I2 }}
+
+
+       <div class="grid-block">
+          <div id="G1" class="cell">
+             <div class='sudoku_number'>
+               {{ sudoku.G1 }}
+             </div>
+          </div>
+          <div id="G2" class="cell">
+            <div class='sudoku_number'>
+              {{ sudoku.G2 }}
+            </div>
+          </div>
+          <div id="G3" class="cell">
+            <div class='sudoku_number'>
+              {{ sudoku.G3 }}
+            </div>
+          </div>
+          <br>
+          <div id="H1" class="cell">
+            <div class='sudoku_number'>
+              {{ sudoku.H1 }}
+            </div>
+          </div>
+          <div id="H2" class="cell">
+            <div class='sudoku_number'>
+              {{ sudoku.H2 }}
+            </div>
+          </div>
+          <div id="H3" class="cell">
+            <div class='sudoku_number'>
+              {{ sudoku.H3 }}
+            </div>
+          </div>
+          <br>
+          <div id="I1" class="cell">
+            <div class='sudoku_number'>
+              {{ sudoku.I1 }}
+            </div>
+          </div>
+          <div id="I2" class="cell">
+            <div class='sudoku_number'>
+              {{ sudoku.I2 }}
+            </div>
+          </div>
+          <div id="I3" class="cell">
+            <div class='sudoku_number'>
+              {{ sudoku.I3 }}
+            </div>
+          </div>
+        </div>
+        <div class="grid-block">
+           <div id="G4" class="cell">
+              <div class='sudoku_number'>
+                {{ sudoku.G4 }}
+              </div>
+           </div>
+           <div id="G5" class="cell">
+             <div class='sudoku_number'>
+               {{ sudoku.G5 }}
+             </div>
+           </div>
+           <div id="G6" class="cell">
+             <div class='sudoku_number'>
+               {{ sudoku.G6 }}
+             </div>
+           </div>
+           <br>
+           <div id="H4" class="cell">
+             <div class='sudoku_number'>
+               {{ sudoku.H4 }}
+             </div>
+           </div>
+           <div id="H5" class="cell">
+             <div class='sudoku_number'>
+               {{ sudoku.H5 }}
+             </div>
+           </div>
+           <div id="H6" class="cell">
+             <div class='sudoku_number'>
+               {{ sudoku.H6 }}
+             </div>
+           </div>
+           <br>
+           <div id="I4" class="cell">
+             <div class='sudoku_number'>
+               {{ sudoku.I4 }}
+             </div>
+           </div>
+           <div id="I5" class="cell">
+             <div class='sudoku_number'>
+               {{ sudoku.I5 }}
+             </div>
+           </div>
+           <div id="I6" class="cell">
+             <div class='sudoku_number'>
+               {{ sudoku.I6 }}
+             </div>
+           </div>
          </div>
-         <div id="I3" class="cell">
-            {{ sudoku.I3 }}
-         </div>
-         <div id="I4" class="cell">
-            {{ sudoku.I4 }}
-         </div>
-         <div id="I5" class="cell">
-            {{ sudoku.I5 }}
-         </div>
-         <div id="I6" class="cell">
-            {{ sudoku.I6 }}
-         </div>
-         <div id="I7" class="cell">
-            {{ sudoku.I7 }}
-         </div>
-         <div id="I8" class="cell">
-            {{ sudoku.I8 }}
-         </div>
-         <div id="I9" class="cell">
-            {{ sudoku.I9 }}
-         </div>
-      </div>
-   </div>
+         <div class="grid-block">
+            <div id="G7" class="cell">
+               <div class='sudoku_number'>
+                 {{ sudoku.G7 }}
+               </div>
+            </div>
+            <div id="G8" class="cell">
+              <div class='sudoku_number'>
+                {{ sudoku.G8 }}
+              </div>
+            </div>
+            <div id="G9" class="cell">
+              <div class='sudoku_number'>
+                {{ sudoku.G9 }}
+              </div>
+            </div>
+            <br>
+            <div id="H7" class="cell">
+              <div class='sudoku_number'>
+                {{ sudoku.H7 }}
+              </div>
+            </div>
+            <div id="H8" class="cell">
+              <div class='sudoku_number'>
+                {{ sudoku.H8 }}
+              </div>
+            </div>
+            <div id="H9" class="cell">
+              <div class='sudoku_number'>
+                {{ sudoku.H9 }}
+              </div>
+            </div>
+            <br>
+            <div id="I7" class="cell">
+              <div class='sudoku_number'>
+                {{ sudoku.I7 }}
+              </div>
+            </div>
+            <div id="I8" class="cell">
+              <div class='sudoku_number'>
+                {{ sudoku.I8 }}
+              </div>
+            </div>
+            <div id="I9" class="cell">
+              <div class='sudoku_number'>
+                {{ sudoku.I9 }}
+              </div>
+            </div>
+          </div>
 </body>
 {% endif %}
