@@ -1,281 +1,278 @@
 <head>
    <title>Main page</title>
-   <!-- Theme ESS -->
-	<link rel=stylesheet type=text/css href="{{ url_for('static', filename='stylesheets/style.css') }}">
+   <!-- Theme CSS -->
+	<link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-  <form action="{{ url_for('solve_sudoku')}}" method = 'post'>
    <div class="grid">
       <div class="grid-row">
          <div id="A1" class="cell">
-            <input type='text' name='A1'>
+            A1
          </div>
          <div id="A2" class="cell">
-            <input type='text' name='A2'>
+            A2
          </div>
          <div id="A3" class="cell">
-            <input type='text' name='A3'>
+            A3
          </div>
          <div id="A4" class="cell">
-            <input type='text' name='A4'>
+            A4
          </div>
          <div id="A5" class="cell">
-            <input type='text' name='A5'>
+            A5
          </div>
          <div id="A6" class="cell">
-            <input type='text' name='A6'>
+            A6
          </div>
          <div id="A7" class="cell">
-            <input type='text' name='A7'>
+            A7
          </div>
          <div id="A8" class="cell">
-            <input type='text' name='A8'>
+            A8
          </div>
          <div id="A9" class="cell">
-            <input type='text' name='A9'>
+            A9
          </div>
       </div>
       <br>
       <div class="grid-row">
          <div id="B1" class="cell">
-            <input type='text' name='B1'>
+            B1
          </div>
          <div id="B2" class="cell">
-            <input type='text' name='B2'>
+            B2
          </div>
          <div id="B3" class="cell">
-            <input type='text' name='B3'>
+            B3
          </div>
          <div id="B4" class="cell">
-            <input type='text' name='B4'>
+            B4
          </div>
          <div id="B5" class="cell">
-            <input type='text' name='B5'>
+            B5
          </div>
          <div id="B6" class="cell">
-            <input type='text' name='B6'>
+            B6
          </div>
          <div id="B7" class="cell">
-            <input type='text' name='B7'>
+            B7
          </div>
          <div id="B8" class="cell">
-            <input type='text' name='B8'>
+            B8
          </div>
          <div id="B9" class="cell">
-            <input type='text' name='B9'>
+            B9
          </div>
       </div>
       <br>
       <div class="grid-row">
          <div id="C1" class="cell">
-            <input type='text' name='C1'>
+            C1
          </div>
          <div id="C2" class="cell">
-            <input type='text' name='C2'>
+            C2
          </div>
          <div id="C3" class="cell">
-            <input type='text' name='C3'>
+            C3
          </div>
          <div id="C4" class="cell">
-            <input type='text' name='C4'>
+            C4
          </div>
          <div id="C5" class="cell">
-            <input type='text' name='C5'>
+            C5
          </div>
          <div id="C6" class="cell">
-            <input type='text' name='C6'>
+            C6
          </div>
          <div id="C7" class="cell">
-            <input type='text' name='C7'>
+            C7
          </div>
          <div id="C8" class="cell">
-            <input type='text' name='C8'>
+            C8
          </div>
          <div id="C9" class="cell">
-            <input type='text' name='C9'>
+            C9
          </div>
       </div>
       <br>
       <div class="grid-row">
          <div id="D1" class="cell">
-            <input type='text' name='D1'>
+            D1
          </div>
          <div id="D2" class="cell">
-            <input type='text' name='D2'>
+            D2
          </div>
          <div id="D3" class="cell">
-            <input type='text' name='D3'>
+            D3
          </div>
          <div id="D4" class="cell">
-            <input type='text' name='D4'>
+            D4
          </div>
          <div id="D5" class="cell">
-            <input type='text' name='D5'>
+            D5
          </div>
          <div id="D6" class="cell">
-            <input type='text' name='D6'>
+            D6
          </div>
          <div id="D7" class="cell">
-            <input type='text' name='D7'>
+            D7
          </div>
          <div id="D8" class="cell">
-            <input type='text' name='D8'>
+            D8
          </div>
          <div id="D9" class="cell">
-            <input type='text' name='D9'>
+            D9
          </div>
       </div>
       <br>
       <div class="grid-row">
          <div id="E1" class="cell">
-            <input type='text' name='E1'>
+            E1
          </div>
          <div id="E2" class="cell">
-            <input type='text' name='E2'>
+            E2
          </div>
          <div id="E3" class="cell">
-            <input type='text' name='E3'>
+            E3
          </div>
          <div id="E4" class="cell">
-            <input type='text' name='E4'>
+            E4
          </div>
          <div id="E5" class="cell">
-            <input type='text' name='E5'>
+            E5
          </div>
          <div id="E6" class="cell">
-            <input type='text' name='E6'>
+            E6
          </div>
          <div id="E7" class="cell">
-            <input type='text' name='E7'>
+            E7
          </div>
          <div id="E8" class="cell">
-            <input type='text' name='E8'>
+            E8
          </div>
          <div id="E9" class="cell">
-            <input type='text' name='E9'>
+            E9
          </div>
       </div>
       <br>
       <div class="grid-row">
          <div id="F1" class="cell">
-            <input type='text' name='F1'>
+            F1
          </div>
          <div id="F2" class="cell">
-            <input type='text' name='F2'>
+            F2
          </div>
          <div id="F3" class="cell">
-            <input type='text' name='F3'>
+            F3
          </div>
          <div id="F4" class="cell">
-            <input type='text' name='F4'>
+            F4
          </div>
          <div id="F5" class="cell">
-            <input type='text' name='F5'>
+            F5
          </div>
          <div id="F6" class="cell">
-            <input type='text' name='F6'>
+            F6
          </div>
          <div id="F7" class="cell">
-            <input type='text' name='F7'>
+            F7
          </div>
          <div id="F8" class="cell">
-            <input type='text' name='F8'>
+            F8
          </div>
          <div id="F9" class="cell">
-            <input type='text' name='F9'>
+            F9
          </div>
       </div>
       <br>
       <div class="grid-row">
          <div id="G1" class="cell">
-            <input type='text' name='G1'>
+            G1
          </div>
          <div id="G2" class="cell">
-            <input type='text' name='G2'>
+            G2
          </div>
          <div id="G3" class="cell">
-            <input type='text' name='G3'>
+            G3
          </div>
          <div id="G4" class="cell">
-            <input type='text' name='G4'>
+            G4
          </div>
          <div id="G5" class="cell">
-            <input type='text' name='G5'>
+            G5
          </div>
          <div id="G6" class="cell">
-            <input type='text' name='G6'>
+            G6
          </div>
          <div id="G7" class="cell">
-            <input type='text' name='G7'>
+            G7
          </div>
          <div id="G8" class="cell">
-            <input type='text' name='G8'>
+            G8
          </div>
          <div id="G9" class="cell">
-            <input type='text' name='G9'>
+            G9
          </div>
       </div>
       <br>
        <div class="grid-row">
          <div id="H1" class="cell">
-            <input type='text' name='H1'>
+            H1
          </div>
          <div id="H2" class="cell">
-            <input type='text' name='H2'>
+            H2
          </div>
          <div id="H3" class="cell">
-            <input type='text' name='H3'>
+            H3
          </div>
          <div id="H4" class="cell">
-            <input type='text' name='H4'>
+            H4
          </div>
          <div id="H5" class="cell">
-            <input type='text' name='H5'>
+            H5
          </div>
          <div id="H6" class="cell">
-            <input type='text' name='H6'>
+            H6
          </div>
          <div id="H7" class="cell">
-            <input type='text' name='H7'>
+            H7
          </div>
          <div id="H8" class="cell">
-            <input type='text' name='H8'>
+            H8
          </div>
          <div id="H9" class="cell">
-            <input type='text' name='H9'>
+            H9
          </div>
       </div>
       <br>
        <div class="grid-row">
          <div id="I1" class="cell">
-            <input type='text' name='I1'>
+            I1
          </div>
          <div id="I2" class="cell">
-            <input type='text' name='I2'>
+            I2
          </div>
          <div id="I3" class="cell">
-            <input type='text' name='I3'>
+            I3
          </div>
          <div id="I4" class="cell">
-            <input type='text' name='I4'>
+            I4
          </div>
          <div id="I5" class="cell">
-            <input type='text' name='I5'>
+            I5
          </div>
          <div id="I6" class="cell">
-            <input type='text' name='I6'>
+            I6
          </div>
          <div id="I7" class="cell">
-            <input type='text' name='I7'>
+            I7
          </div>
          <div id="I8" class="cell">
-            <input type='text' name='I8'>
+            I8
          </div>
          <div id="I9" class="cell">
-            <input type='text' name='I9'>
+            I9
          </div>
       </div>
    </div>
-   <input type='submit' value='Edit'>
- </form>
 </body>
