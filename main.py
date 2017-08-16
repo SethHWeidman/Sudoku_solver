@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request
+from python.sudoku import get_boxes
 app = Flask(__name__)
 
 def try_read_int(cell):
@@ -9,13 +10,18 @@ def try_read_int(cell):
         message = "Please pass in only integer values between 0 and 9."
         render_template("index.html", message=message) # Change this to use flashed messages.
 
-assignments = []
+'''
+Sudoku setup
+'''
+
 ROWS = 'ABCDEFGHI'
 COLS = '123456789'
-def cross(A, B):
-    '''Combinations of concatenations of all the strings in a list of strings.'''
-    return [s+t for s in A for t in B]
-boxes = cross(ROWS, COLS)
+boxes = get_boxes(ROWS, COLS)
+
+ROW_UNITS = [cross(r, COLS) for r in ROWS]
+COLUMN_UNITS = [cross(ROWS, c) for c in COLS]
+SQUARE_UNITS = [cross(rs, cs) for rs in ('ABC','DEF','GHI') for cs in ('123','456','789')]
+UNIT_LIST = ROW_UNITS + COLUMN_UNITS + SQUARE_UNITS
 
 
 @app.route('/')
@@ -27,6 +33,7 @@ def solve_sudoku():
     cell_data = {}
     for box in boxes:
         cell_data[box] = try_read_int(box)
+        
     print(cell_data)
 
 if __name__ == '__main__':
