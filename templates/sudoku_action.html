@@ -289,6 +289,13 @@
    <script>
   //  debugger;
    var html = $(".sudoku-solving").html();
+   
+   html = html.substring(0, 3) + "<br>" + html.substring(3, 6) + "<br>" + html.substring(6, 9);
+   $(".sudoku-solving").html(html);
+   </script>
+   <script>
+  //  debugger;
+   var html = $(".sudoku-solving").html();
    html = html.substring(0, 3) + "<br>" + html.substring(3, 6) + "<br>" + html.substring(6, 9);
    $(".sudoku-solving").html(html);
    </script>

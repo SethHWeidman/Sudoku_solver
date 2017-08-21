@@ -24,7 +24,16 @@ boxes = get_boxes(ROWS, COLS)
 
 @app.route('/')
 def hello_world():
-    return render_template('index.html')
+    easy_dict = {"A1": 7, "A5": 9,
+                 "B2": 6, "B3": 8, "B8": 3, "B9": 1,
+                 "C1": 5, "C3": 1, "C4": 3, "C7": 4, "C8": 2, "C9": 7,
+                 "D1": 8, "D2": 1, "D5": 5,
+                 "E3": 7, "E4": 9, "E5": 1, "E6": 6, "E7": 8,
+                 "F5": 7, "F8": 1, "F9": 3,
+                 "G1": 4, "G2": 3, "G3": 5, "G6": 7, "G7": 1, "G9": 2,
+                 "H1": 9, "H2": 7, "H7": 6, "H8": 4,
+                 "I5": 2, "I9": 5}
+    return render_template('index.html', input_sudoku=easy_dict)
 
 @app.route('/sudoku_action/')
 def sudoku_action():
