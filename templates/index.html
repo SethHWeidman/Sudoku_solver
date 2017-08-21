@@ -288,6 +288,7 @@
               <input type='text' value='' class='sudoku_number' name='I9'>
            </div>
          </div>
+       </div>
   {% if input_sudoku %}
    <script>
    var input_sudoku = {{input_sudoku|safe}}
@@ -300,6 +301,10 @@
    });
    </script>
   {% endif %}
-   <input type='submit' id="submit_button" value='Solve the Sudoku'>
+  <div class="toggle-buttons">
+    <input type="radio" name="type" value="solve_all">Solve the whole thing<br>
+    <input type="radio" name="type" value="solve_step">Solve step by step<br>
+  </div>
+   <input type='submit' id="submit_button" value='Go'>
  </form>
 </body>

@@ -35,19 +35,23 @@ def hello_world():
                  "I5": 2, "I9": 5}
     return render_template('index.html', input_sudoku=easy_dict)
 
-@app.route('/sudoku_action/')
+@app.route('/sudoku_action/', methods=['GET', 'POST'])
 def sudoku_action():
-    return render_template('sudoku_action.html')
+    if request.form['type'] == 'solve_all':
+        cell_data = {}
+        for box in boxes:
+            cell_data[box] = ''
+            cell_data[box] = try_read_int(box)
+        final_values = solve_values(cell_data)
+        return render_template("solved_sudoku.html", sudoku=final_values)
+    else:
+        return render_template('sudoku_action.html')
 
 
-@app.route('/solve_sudoku_new/', methods=['GET', 'POST'])
-def solve_sudoku():
-    cell_data = {}
-    for box in boxes:
-        cell_data[box] = ''
-        cell_data[box] = try_read_int(box)
-    final_values = solve_values(cell_data)
-    return render_template("solved_sudoku.html", sudoku=final_values)
+# @app.route('/solve_sudoku_new/', methods=['GET', 'POST'])
+# def solve_sudoku():
+
+
 
 
 if __name__ == '__main__':

@@ -69,6 +69,10 @@
   font-size: 8pt;
 }
 
+.toggle-buttons {
+    margin-top: 10px;
+}
+
 #submit_button {
     /*Put ten pixels below Sudoku*/
     margin-top: 10px;
