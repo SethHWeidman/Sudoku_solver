@@ -1,17 +1,18 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
 from python.sudoku import get_boxes
 from python.sudoku import solve_values
 from python.sudoku import eliminate_one
+import time
 app = Flask(__name__)
 
 def try_read_int(cell, default_value='123456789'):
     acceptable_values = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
     try:
         value = int(request.form[cell])
-        if value in acceptable_values:
-            return str(value)
-        else:
-            "Please enter an integer between 0 and 9"
+        # if value in acceptable_values:
+        return str(value)
+        # else:
+        #     "Please enter an integer between 0 and 9"
     except:
         return default_value
 '''
@@ -55,10 +56,10 @@ def update_one():
     for box in boxes:
         cell_data[box] = ''
         cell_data[box] = try_read_int(box)
-    # import pdb; pdb.set_trace()
     new_values = eliminate_one(cell_data)
-
-    return render_template('sudoku_action.html', input_sudoku=new_values)
+    time.sleep(1)
+    # import pdb; pdb.set_trace()
+    return jsonify(new_values)
 
 # @app.route('/solve_sudoku_new/', methods=['GET', 'POST'])
 # def solve_sudoku():

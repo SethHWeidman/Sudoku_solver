@@ -7,13 +7,21 @@
 }
 
 .sudoku-solving {
+}
+
+.sudoku-not-solved {
     height: inherit;
     width: inherit;
     max-width: 40px;
     text-align: center;
     font-size: 10pt;
     letter-spacing: 5px;
-    word-wrap:break-word;
+    word-wrap: break-word;
+}
+
+.highlight {
+  color: #000;
+  transition: background 0.5s linear;
 }
 
 .grid {
