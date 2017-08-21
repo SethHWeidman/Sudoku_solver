@@ -9,10 +9,11 @@
 .sudoku-solving {
     height: inherit;
     width: inherit;
-    background-color: inherit;
+    max-width: 40px;
     text-align: center;
     font-size: 10pt;
     letter-spacing: 5px;
+    word-wrap:break-word;
 }
 
 .grid {
@@ -63,10 +64,10 @@
 
 .solving-cell {
   /*Align text within cells.*/
-  text-align: center;
+  /*text-align: center;
   vertical-align: middle;
   line-height: 16px;
-  font-size: 8pt;
+  font-size: 8pt;*/
 }
 
 .toggle-buttons {

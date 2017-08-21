@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request
 from python.sudoku import get_boxes
 from python.sudoku import solve_values
+from python.sudoku import eliminate_one
 app = Flask(__name__)
 
 def try_read_int(cell, default_value='123456789'):
@@ -37,16 +38,27 @@ def hello_world():
 
 @app.route('/sudoku_action/', methods=['GET', 'POST'])
 def sudoku_action():
+    cell_data = {}
+    for box in boxes:
+        cell_data[box] = ''
+        cell_data[box] = try_read_int(box)
     if request.form['type'] == 'solve_all':
-        cell_data = {}
-        for box in boxes:
-            cell_data[box] = ''
-            cell_data[box] = try_read_int(box)
         final_values = solve_values(cell_data)
         return render_template("solved_sudoku.html", sudoku=final_values)
     else:
-        return render_template('sudoku_action.html')
+        return render_template('sudoku_action.html', input_sudoku=cell_data)
 
+
+@app.route('/eliminate_one/', methods=['GET', 'POST'])
+def update_one():
+    cell_data = {}
+    for box in boxes:
+        cell_data[box] = ''
+        cell_data[box] = try_read_int(box)
+    # import pdb; pdb.set_trace()
+    new_values = eliminate_one(cell_data)
+
+    return render_template('sudoku_action.html', input_sudoku=new_values)
 
 # @app.route('/solve_sudoku_new/', methods=['GET', 'POST'])
 # def solve_sudoku():

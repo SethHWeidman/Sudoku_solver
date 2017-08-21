@@ -286,11 +286,43 @@
               <div class='sudoku-solving' name='I9'>123456789</div>
            </div>
          </div>
-   <script>
+   <!-- <script>
   //  debugger;
    var html = $(".sudoku-solving").html();
    html = html.substring(0, 3) + "<br>" + html.substring(3, 6) + "<br>" + html.substring(6, 9);
    $(".sudoku-solving").html(html);
-   </script>
+   </script> -->
+
+   <!-- <script>
+    setInterval(function() {
+      $.ajax({
+        url: {{ url_for('update_one')}},
+        data: $('form').serialize(),
+        type: 'POST',
+        success: function(response) {
+                console.log(response);
+            },
+            error: function(error) {
+                console.log(error);
+            }
+      }), 10000
+    });
+   </script> -->
+
+    {% if input_sudoku %}
+   <script>
+  //  debugger;
+    var input_sudoku = {{input_sudoku|safe}}
+    var input_keys = Object.keys(input_sudoku);
+    var numbers = $(".sudoku-solving");
+    numbers.each(function() {
+      var candidate_numbers = input_sudoku[$(this).attr("name")];
+      if (candidate_numbers.length == 1) {
+        $(this).text(candidate_numbers);
+        $(this).attr("class", "input-cell");
+      }
+    });
+    </script>
+   {% endif %}
    <input type='submit' id="submit_button" value='Solve the Sudoku'>
 </body>

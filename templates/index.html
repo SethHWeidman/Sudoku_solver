@@ -1,7 +1,6 @@
 <head>
    <title>Main page</title>
 	<link rel=stylesheet type=text/css href="{{ url_for('static', filename='stylesheets/style.css') }}">
-  <meta id="input_sudoku" data-name="{{name}}" data-other="{{other}}">
 </head>
 <body>
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
@@ -289,6 +288,7 @@
            </div>
          </div>
        </div>
+
   {% if input_sudoku %}
    <script>
    var input_sudoku = {{input_sudoku|safe}}
@@ -301,6 +301,7 @@
    });
    </script>
   {% endif %}
+
   <div class="toggle-buttons">
     <input type="radio" name="type" value="solve_all">Solve the whole thing<br>
     <input type="radio" name="type" value="solve_step">Solve step by step<br>
