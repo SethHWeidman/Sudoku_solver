@@ -6,6 +6,14 @@
     font-size: 200%;
 }
 
+.sudoku-solving {
+    height: inherit;
+    width: inherit;
+    background-color: inherit;
+    text-align: center;
+    font-size: 10pt;
+    letter-spacing: 5px;
+}
 
 .grid {
   width: 477px; /*157 * 3 - 1 */
@@ -46,18 +54,19 @@
   float: left;
 }
 
-.input-cell{
+.input-cell {
   /*Align text within cells.*/
   text-align: center;
   vertical-align: middle;
   line-height: 50px;
 }
 
-.solving-cell{
+.solving-cell {
   /*Align text within cells.*/
   text-align: center;
   vertical-align: middle;
   line-height: 16px;
+  font-size: 8pt;
 }
 
 #submit_button {
