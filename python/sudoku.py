@@ -245,6 +245,5 @@ def solve_values(values):
     Returns:
         The dictionary representation of the final sudoku grid. False if no solution exists.
     """
-    print("Solving the puzzle: ")
     final_values = search(values)
     return final_values

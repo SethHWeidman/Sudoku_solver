@@ -8,8 +8,8 @@
 
 
 .grid {
-  width: 470px; /*157 * 3 - 1 */
-  height: 466px; /* Not sure why this is less */
+  width: 477px; /*157 * 3 - 1 */
+  height: 475px; /* Not sure why this is less */
 
   /*Center horizontally*/
   display: block;
@@ -22,7 +22,7 @@
   /*Maintain row width while wrapping next row around*/
   display: inline-block;
   float: left;
-  width: 155px;
+  width: 157px;
   border: 1px solid white;
 }
 
@@ -44,11 +44,20 @@
 
   /*Gets cells to move to left of row.*/
   float: left;
+}
 
+.input-cell{
   /*Align text within cells.*/
   text-align: center;
   vertical-align: middle;
   line-height: 50px;
+}
+
+.solving-cell{
+  /*Align text within cells.*/
+  text-align: center;
+  vertical-align: middle;
+  line-height: 16px;
 }
 
 #submit_button {

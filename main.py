@@ -26,6 +26,10 @@ boxes = get_boxes(ROWS, COLS)
 def hello_world():
     return render_template('index.html')
 
+@app.route('/sudoku_action/')
+def sudoku_action():
+    return render_template('sudoku_action.html')
+
 
 @app.route('/solve_sudoku_new/', methods=['GET', 'POST'])
 def solve_sudoku():
