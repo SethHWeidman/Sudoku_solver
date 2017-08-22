@@ -292,6 +292,9 @@
     </div>
 
   <script>
+// This function updates the classes of all the "sudoku-solving" cells. It is used because
+// if a cell only has one possible value, it is solved, and we should assign it the
+// "sudoku_number" class which enlarges the text.
   function updateClasses(input_sudoku) {
   var numbers = $(".sudoku-solving");
   numbers.each(function() {
@@ -305,20 +308,27 @@
   };
   </script>
 
+<!-- If we have received an "input_sudoku" argument, from the render_template
+sudoku_action template, for example, then:
+- Update the classes of the cells appropriately.
+- Append an "SVG" to the bottom of the grid that will display our message.
+- This particular block will only be run once, upon receiving the original Sudoku
+values from sudoku_action. -->
   {% if input_sudoku %}
   <script>
- //  debugger;
-   var input_sudoku = {{input_sudoku|safe}}
-   var input_keys = Object.keys(input_sudoku);
-   updateClasses(input_sudoku);
+  var input_sudoku = {{input_sudoku|safe}}
+  var input_keys = Object.keys(input_sudoku);
+  updateClasses(input_sudoku);
 
-   var message_area = d3.selectAll(".update_message")
-   .append("svg")
-   .attr("width", 500)
-   .attr("height", 100);
-   </script>
+  var message_area = d3.selectAll(".update_message")
+  .append("svg")
+  .attr("width", 500)
+  .attr("height", 100);
+  </script>
   {% endif %}
 
+<!-- This function extracts a dictionary from the page representing state of the grid
+at a given time: e.g. {"A1": "234", "A2": 5, "A3": "1234567", ...} etc.  -->
   <script>
    function extractData() {
       output_dict = {};
@@ -329,6 +339,8 @@
       return output_dict;
     };
 
+// This function takes in a new "state of the board and applies it to the board,
+// specifically to everything with a "sudoku-solving" class.
   function displayNewData(update_sudoku) {
      var numbers = $(".sudoku-solving");
      numbers.each(function() {
@@ -336,6 +348,8 @@
      });
    };
 
+// This function displays a message in the "message_area" svg element. It transitions
+// the message in, waits, and then transitions it out.
    function displayMessage(message) {
     var variable_message = message_area.append("text")
     .text(message)
@@ -344,31 +358,41 @@
     .attr("fill", "red")
     .attr("opacity", 0)
     .transition()
-      .duration(2000)
-      .attr("y", 20)
+      .duration(500)
+      .attr("y", 50)
       .attr("opacity", 1)
     .transition()
-      .duration(2000)
-    .transition(2000)
+      .duration(500)
+    .transition(500)
       .attr("y", 80)
       .attr("opacity", 0);
     };
 
+// This function highlights cells by first finding the cell with the appropriate id,
+// adding the styling of the class "highlighted-cell", waiting for a bit, and then
+// removing the styling.
     function highlightCell(cell) {
       $('#'.concat(cell)).addClass('highlighted-cell')
       setTimeout(function() {
         $('#'.concat(cell)).removeClass('highlighted-cell');
-      }, 4000)
+      }, 2000)
     };
 
-
+// This is the key function. It:
+// - Feeds in the data from the "extractData" function representing the current state
+// of the board.
+// - Makes a call to the Python "update_one" function and gets a state of the board back.
+// - Updates the classes (enlarging the cells that now only have one value left)
+// - Displays the new data
+// - Displays a message based on what has been updated
+// - Highlights the cell that has been update.
+// - Calls the function again!
   function callFlaskUpdateOne() {
       $.ajax({
         url: {{ url_for('update_one')}},
         data: extractData(),
         type: 'POST',
         success: function(response) {
-          // debugger;
           updateClasses(response['values']);
           displayNewData(response['values']);
           displayMessage(response['message'])

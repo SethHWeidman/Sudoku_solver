@@ -1,39 +1,52 @@
+/*Sudoku numbers are solved cells with only one value.*/
 .sudoku_number {
     height: inherit;
     width: inherit;
     background-color: inherit;
     text-align: center;
+    line-height: 50px;
+    vertical-align: middle;
     font-size: 200%;
 }
 
+/*Sudoku-solving is a placeholder class given to the cells that have not been solved yet.*/
 .sudoku-solving {
 }
 
+/*This class styles the cells that have not been solved yet, centering the text
+within those cells precisely using the "top" and "left" attributes below.*/
 .sudoku-not-solved {
     height: inherit;
     width: inherit;
+    margin: auto;
     max-width: 40px;
     text-align: center;
     font-size: 10pt;
     letter-spacing: 5px;
     word-wrap: break-word;
+    position: relative;
+    top: 4%;
+    left: 3%;
 }
 
-.highlight {
+/*Transition for the cells that have changed.*/
+/*.highlight {
   color: #000;
   transition: background 0.5s linear;
-}
+}*/
 
+/*The big grid.*/
 .grid {
-  width: 477px; /*157 * 3 - 1 */
-  height: 475px; /* Not sure why this is less */
+  width: 475px; /*157 * 3 - 1 */
+  height: 475px;
 
-  /*Center horizontally*/
+  /*Center the whole thing horizontally*/
   display: block;
   margin: auto;
   border: 2px solid blue;
 }
 
+/*Styling of the box containing the update message.*/
 .update_message {
 
   /*Center horizontally*/
@@ -42,17 +55,18 @@
   width: 500px;
 }
 
+/*A 3x3 block containing the cells for each value.*/
 .grid-block {
 
   /*Maintain row width while wrapping next row around*/
   display: inline-block;
   float: left;
-  width: 157px;
+  width: 156px;
+  height: 156px;
   border: 1px solid white;
 }
 
 /*Alternate colors blue and gray*/
-
 .grid-block:nth-child(odd) {
   background-color: powderblue;
 }
@@ -74,7 +88,9 @@
 
 .highlighted-cell {
   background-color: LightCoral;
+  transition: background 0.5s linear;
 }
+
 
 .input-cell {
   /*Align text within cells.*/
@@ -83,19 +99,14 @@
   line-height: 50px;
 }
 
+/*Align text within cells that have been solved.*/
 .solving-cell {
-  /*Align text within cells.*/
-  /*text-align: center;
+  text-align: center;
   vertical-align: middle;
-  line-height: 16px;
-  font-size: 8pt;*/
+  border: 1px solid white;
 }
 
+/*Put spaces of 10 pixels between the buttons and the elements above them.*/
 .toggle-buttons {
-    margin-top: 10px;
-}
-
-#submit_button {
-    /*Put ten pixels below Sudoku*/
     margin-top: 10px;
 }
