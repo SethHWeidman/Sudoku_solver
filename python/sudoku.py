@@ -124,8 +124,8 @@ def eliminate_one(values):
             len_peer_after = values[peer]
 
             if len_peer_after < len_peer_before:
-                print("Eliminated ", digit, "from box ", peer, " using the 'eliminate' strategy.")
-                return values
+                message = "Eliminated " + digit + " from box " + peer + " using the 'eliminate' strategy."
+                return values, message, peer
 
 
 def only_choice(values):

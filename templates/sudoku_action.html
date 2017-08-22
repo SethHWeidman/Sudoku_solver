@@ -337,7 +337,6 @@
    };
 
    function displayMessage(message) {
-
     var variable_message = message_area.append("text")
     .text(message)
     .attr("x", 100)
@@ -349,13 +348,19 @@
       .attr("y", 20)
       .attr("opacity", 1)
     .transition()
-      .duration(10000)
+      .duration(2000)
     .transition(2000)
       .attr("y", 80)
       .attr("opacity", 0);
-
-    // message_area.selectAll("text").remove();
     };
+
+    function highlightCell(cell) {
+      $('#'.concat(cell)).addClass('highlighted-cell')
+      setTimeout(function() {
+        $('#'.concat(cell)).removeClass('highlighted-cell');
+      }, 4000)
+    };
+
 
   function callFlaskUpdateOne() {
       $.ajax({
@@ -363,9 +368,11 @@
         data: extractData(),
         type: 'POST',
         success: function(response) {
-          updateClasses(response);
-          displayNewData(response);
-          displayMessage("Hello")
+          // debugger;
+          updateClasses(response['values']);
+          displayNewData(response['values']);
+          displayMessage(response['message'])
+          highlightCell(response['peer']);
           callFlaskUpdateOne();
         },
         error: function(error) {

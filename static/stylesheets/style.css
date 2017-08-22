@@ -69,6 +69,11 @@
 
   /*Gets cells to move to left of row.*/
   float: left;
+  transition: all 1.0s ease;
+}
+
+.highlighted-cell {
+  background-color: LightCoral;
 }
 
 .input-cell {

@@ -56,10 +56,10 @@ def update_one():
     for box in boxes:
         cell_data[box] = ''
         cell_data[box] = try_read_int(box)
-    new_values = eliminate_one(cell_data)
-    time.sleep(20)
+    new_values, message, peer = eliminate_one(cell_data)
+    time.sleep(6)
     # import pdb; pdb.set_trace()
-    return jsonify(new_values)
+    return jsonify(values=new_values, message=message, peer=peer)
 
 # @app.route('/solve_sudoku_new/', methods=['GET', 'POST'])
 # def solve_sudoku():
