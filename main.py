@@ -57,7 +57,7 @@ def update_one():
         cell_data[box] = ''
         cell_data[box] = try_read_int(box)
     new_values = eliminate_one(cell_data)
-    time.sleep(1)
+    time.sleep(20)
     # import pdb; pdb.set_trace()
     return jsonify(new_values)
 

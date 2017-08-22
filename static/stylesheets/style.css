@@ -34,6 +34,14 @@
   border: 2px solid blue;
 }
 
+.update_message {
+
+  /*Center horizontally*/
+  display: block;
+  margin: auto;
+  width: 500px;
+}
+
 .grid-block {
 
   /*Maintain row width while wrapping next row around*/

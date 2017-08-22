@@ -4,6 +4,7 @@
 </head>
 <body>
   <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://d3js.org/d3.v4.min.js"></script>
    <div class="grid">
       <div class="grid-block">
          <div id="A1" class="cell solving-cell">
@@ -286,6 +287,9 @@
               <div class='sudoku-solving sudoku-not-solved' name='I9'>123456789</div>
            </div>
          </div>
+       </div>
+    <div class="update_message">
+    </div>
 
   <script>
   function updateClasses(input_sudoku) {
@@ -300,12 +304,18 @@
     });
   };
   </script>
+
   {% if input_sudoku %}
   <script>
  //  debugger;
    var input_sudoku = {{input_sudoku|safe}}
    var input_keys = Object.keys(input_sudoku);
    updateClasses(input_sudoku);
+
+   var message_area = d3.selectAll(".update_message")
+   .append("svg")
+   .attr("width", 500)
+   .attr("height", 100);
    </script>
   {% endif %}
 
@@ -326,8 +336,28 @@
      });
    };
 
+   function displayMessage(message) {
 
-  function doSomething() {
+    var variable_message = message_area.append("text")
+    .text(message)
+    .attr("x", 100)
+    .attr("y", 80)
+    .attr("fill", "red")
+    .attr("opacity", 0)
+    .transition()
+      .duration(2000)
+      .attr("y", 20)
+      .attr("opacity", 1)
+    .transition()
+      .duration(10000)
+    .transition(2000)
+      .attr("y", 80)
+      .attr("opacity", 0);
+
+    // message_area.selectAll("text").remove();
+    };
+
+  function callFlaskUpdateOne() {
       $.ajax({
         url: {{ url_for('update_one')}},
         data: extractData(),
@@ -335,7 +365,8 @@
         success: function(response) {
           updateClasses(response);
           displayNewData(response);
-          doSomething();
+          displayMessage("Hello")
+          callFlaskUpdateOne();
         },
         error: function(error) {
           console.log(error);
@@ -343,8 +374,6 @@
     })
   };
 
-  doSomething();
+  callFlaskUpdateOne();
    </script>
-
-   <input type='submit' id="submit_button" value='Solve the Sudoku'>
 </body>
